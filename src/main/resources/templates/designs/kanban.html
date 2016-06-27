@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/ico/favicon.ico">
+  <title>Kanban</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.3.3/css/bootstrap-colorpicker.min.css">
+  <link rel="stylesheet" href="/css/kanban.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react-dom.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/locale/ko.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.3.3/js/bootstrap-colorpicker.min.js"></script>
+  <script src="/js/jquery-rest.js"></script>
+  <script src="/js/common.js"></script>
+</head>
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Kanban</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <form class="navbar-form navbar-right">
+          <div class="form-group">
+            <div class="dropdown">
+              <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                Dropdown <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="form-group">
+            <button type="button" class="btn btn-info btn-sm">
+              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Panels&hellip;
+            </button>
+          </div>
+          <div class="form-group">
+            <button type="button" class="btn btn-success btn-sm">
+              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Members&hellip;
+            </button>
+          </div>
+        </form>
+      </div><!--/.navbar-collapse -->
+    </div>
+  </nav>
+
+  <div id="kanban" class="container">
+    <ul id="panels" class="list-inline">
+      <li>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            Backlog <a href=""><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+          </div>
+          <div class="panel-body">
+            <ul id="group1" class="list-group">
+              <li id="item1" class="list-group-item">
+                <div class="clearfix list-group-item-toolbox">
+                  <div class="list-group-item-priority"></div>
+                  <div class="list-group-item-toolbar">
+                    <a href="#">
+                      <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                    </a>
+                    <a href="#">
+                      <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                    </a>
+                  </div>
+                </div>
+                <div class="list-group-item-content">
+                  Cras justo odio
+                  <div>
+                    <small><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span></small>
+                    <small><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 2016-06-03</small>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <img src="/img/anonymous.jpg" width="20">
+                  <img src="http://cfile10.uf.tistory.com/image/1957E0355084CB8038290B" width="20">
+                  <img src="http://file2.instiz.net/data/file/20150827/d/a/b/dab2bc4c8025cc1b8e987e97b8513121.jpg" width="20">
+                </div>
+              </li>
+              <li id="item2" class="list-group-item">
+                <div class="list-group-item-bar"></div>
+                Dapibus ac facilisis in
+              </li>
+              <li id="item3" class="list-group-item">
+                <div class="list-group-item-bar"></div>
+                Morbi leo risus
+              </li>
+              <li id="item4" class="list-group-item">
+                <div class="list-group-item-bar"></div>
+                Porta ac consectetur ac
+              </li>
+              <li id="item5" class="list-group-item">
+                <div class="list-group-item-bar"></div>
+                Vestibulum at eros
+              </li>
+            </ul>
+            <div class="panel-footer">
+              <a href="">Add a card&hellip;</a>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="panel panel-primary">
+          <div class="panel-heading">진행중</div>
+          <div class="panel-body">
+            <ul id="group2" class="list-group">
+              <li id="item5" class="list-group-item">
+                <div class="list-group-item-bar"></div>
+                Dapibus ac facilisis in
+              </li>
+              <li id="item6" class="list-group-item">
+                <div class="list-group-item-bar"></div>
+                Morbi leo risus
+              </li>
+              <li id="item8" class="list-group-item">
+                <div class="list-group-item-bar"></div>
+                Porta ac consectetur ac
+              </li>
+              <li id="item9" class="list-group-item">
+                <div class="list-group-item-bar"></div>
+                Vestibulum at eros
+              </li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="panel panel-danger">
+          <div class="panel-heading">Panel heading without title</div>
+          <div class="panel-body">
+            Panel content
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="panel panel-success">
+          <div class="panel-heading">Panel heading without title</div>
+          <div class="panel-body">
+            Panel content
+          </div>
+        </div>
+      </li>
+    </ul>
+
+    <hr>
+
+    <footer>
+      <p>Copyright &copy; 2016 Chotire. All rights reserved</p>
+    </footer>
+  </div> <!-- /container -->
+  <script type="text/javascript">
+  $(function(){
+    //[S] 카드 윈도우
+    var cardValidator = $("#cardModal form").validate();
+
+    $(".panel-footer a").click(function(e) {
+      e.preventDefault();
+      $("#cardModal").modal({
+        show: true,
+        backdrop: "static"
+      }).on("hidden.bs.modal", function() {
+        $("form", this)[0].reset();
+        cardValidator.resetForm();
+      });
+    });
+
+    $(".date").datetimepicker({format: "YYYY-MM-DD"});
+
+    $("#cpForCard").colorpicker({
+      color: "#777777",
+      colorSelectors: {
+        default: "#777777",
+        primary: "#337ab7",
+        success: "#5cb85c",
+        info: "#5bc0de",
+        warning: "#f0ad4e",
+        danger: "#d9534f"
+      }
+    });
+    //[E] 카드 윈도우
+
+    //[S] 멤버 윈도우
+    var memberValidator = $("#memberModal form").validate();
+
+    $(".navbar-form .btn-success").click(function(event) {
+      $("#memberModal").modal({
+        show: true,
+        backdrop: "static"
+      }).on("hidden.bs.modal", function() {
+        $("form", this)[0].reset();
+        memberValidator.resetForm();
+      });
+    });
+    //[E] 멤버 윈도우
+
+    //[S] 패널 윈도우
+    var panelValidator = $("#panelModal form").validate();
+
+    $(".navbar-form .btn-info").click(function(event) {
+      $("#panelModal").modal({
+        show: true,
+        backdrop: "static"
+      }).on("hidden.bs.modal", function() {
+        $("form", this)[0].reset();
+        panelValidator.resetForm();
+      });
+    });
+
+    $("#cpForPanel").colorpicker({
+      color: "#777777",
+      colorSelectors: {
+        default: "#777777",
+        primary: "#337ab7",
+        success: "#5cb85c",
+        info: "#5bc0de",
+        warning: "#f0ad4e",
+        danger: "#d9534f"
+      }
+    });
+    //[E] 패널 윈도우
+
+    //[S] 카드 DnD
+    $(".list-group").sortable({
+      connectWith: ".list-group",
+      placeholder: "list-group-item",
+      forcePlaceholderSize: true,
+      cursor: "move",
+      opacity: 0.7,
+      stop: function(event, ui) {
+        var sortOrder = "";
+        $(".list-group").each(function() {
+          var order = $(this).sortable("toArray");
+          var id = $(this).attr("id");
+          sortOrder += id + "=" + order.toString() + "&";
+        });
+        console.log("SortOrder: " + sortOrder);
+        /*Pass sortorder variable to server using ajax to save state*/
+      }
+    }).disableSelection();
+    //[E] 카드 DnD
+
+    //[S] 패널 DnD
+    $("#panels").sortable({
+      connectWith: ".panels",
+      placeholder: "panel",
+      forcePlaceholderSize: true,
+      cursor: "move",
+      handle: ".panel-heading",
+      opacity: 0.7,
+      // stop: function(event, ui) {
+      //   var sortOrder = "";
+      //   $(".col-md-3").each(function() {
+      //     var order = $(this).sortable("toArray");
+      //     var id = $(this).attr("id");
+      //     sortOrder += id + "=" + order.toString() + "&";
+      //   });
+      //   console.log("SortOrder: " + sortOrder);
+      //   /*Pass sortorder variable to server using ajax to save state*/
+      // }
+    }).disableSelection();
+    //[E] 패널 DnD
+  });
+  </script>
+  <div id="panelModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Panel</h4>
+        </div>
+        <form>
+          <div class="modal-body">
+            <div class="form-group">
+              <label class="sr-only" for="name">Name</label>
+              <input type="text" id="name" name="name" class="form-control" placeholder="Name" required="true">
+            </div>
+            <div class="form-group">
+              <label class="sr-only" for="color">Color</label>
+              <div id="cpForPanel" class="input-group colorpicker-component">
+                <input type="text" id="panelColor" name="color" class="form-control" placeholder="Color" value="default">
+                <span class="input-group-addon"><i></i></span>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Add</button>
+          </div>
+        </form>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+  <div id="memberModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Member</h4>
+        </div>
+        <form>
+          <div class="modal-body">
+            <div class="form-group">
+              <label class="sr-only" for="name">Name</label>
+              <input type="text" id="name" name="name" class="form-control" placeholder="Name" required="true">
+            </div>
+            <div class="form-group">
+              <label class="sr-only" for="photo">Photo</label>
+              <input type="file" id="photo" name="photo" placeholder="Photo">
+              <p class="help-block"><span class="glyphicon glyphicon-user"></span> 사진을 첨부하세요!!</p>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Add</button>
+          </div>
+        </form>
+        <ul class="list-group member-list">
+          <li class="list-group-item member-item clearfix">
+            Cras justo odio
+            <button dtype="button" class="close">×</button>
+            <img src="http://cfile10.uf.tistory.com/image/1957E0355084CB8038290B" width="20">
+          </li>
+          <li class="list-group-item">Dapibus ac facilisis in</li>
+          <li class="list-group-item">Morbi leo risus</li>
+          <li class="list-group-item">Porta ac consectetur ac</li>
+          <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+  <div id="cardModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Card</h4>
+        </div>
+        <form>
+          <div class="modal-body">
+            <div class="form-group">
+              <label class="sr-only" for="name">Name</label>
+              <input type="text" id="name" name="name" class="form-control" placeholder="Name" required="true">
+            </div>
+            <div class="form-group">
+              <label class="sr-only" for="dueDate">Deu Date</label>
+              <div class="input-group date" id="datetimepicker1">
+                <input type="text" id="dueDate" name="dueDate" class="form-control" placeholder="Deu Date">
+                <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="sr-only" for="color">Color</label>
+              <div id="cpForCard" class="input-group colorpicker-component">
+                <input type="text" id="color" name="color" class="form-control" placeholder="Color" value="default">
+                <span class="input-group-addon"><i></i></span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="sr-only" for="note">Note</label>
+              <textarea id="note" name="note" class="form-control" rows="3" placeholder="Note"></textarea>
+            </div>
+            <div class="form-group">
+              <label class="sr-only" for="note">Members</label>
+              <input type="text" id="members" name="members" class="form-control" placeholder="Search members">
+            </div>
+            <div class="clearfix">
+              <div class="thumbnail-remove">
+                <img src="http://www.if-studio.co.kr/postweb103/component/kanban/kanban_11/u_image/20150306172957_1630329852.jpg" width="20">
+                <span class="glyphicon glyphicon-remove-circle"></span>
+              </div>
+              <div class="thumbnail-remove">
+                <img src="http://cfile10.uf.tistory.com/image/1957E0355084CB8038290B" width="20">
+                <span class="glyphicon glyphicon-remove-circle"></span>
+              </div>
+              <div class="thumbnail-remove">
+                <img src="http://file2.instiz.net/data/file/20150827/d/a/b/dab2bc4c8025cc1b8e987e97b8513121.jpg" width="20">
+                <span class="glyphicon glyphicon-remove-circle"></span>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Save</button>
+          </div>
+        </form>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/ico/favicon.ico">
+  <title>Kanban</title>
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/css/bootstrap-datetimepicker.min.css">
+  <link rel="stylesheet" href="/assets/css/bootstrap-colorpicker.min.css">
+  <link rel="stylesheet" href="/css/kanban.css">
+</head>
+<body>
+  <div id="content"></div>
+  <script src="/assets/js/react.min.js"></script>
+  <script src="/assets/js/react-with-addons.min.js"></script>
+  <script src="/assets/js/react-dom.min.js"></script>
+  <script src="/assets/js/browser.min.js"></script>
+  <script src="/assets/js/jquery.min.js"></script>
+  <script src="/assets/js/jquery.validate.min.js"></script>
+  <script src="/assets/js/jquery-ui.min.js"></script>
+  <script src="/assets/js/bootstrap.min.js"></script>
+  <script src="/assets/js/moment.min.js"></script>
+  <script src="/assets/js/locale/ko.js"></script>
+  <script src="/assets/js/bootstrap-datetimepicker.min.js"></script>
+  <script src="/assets/js/bootstrap-colorpicker.min.js"></script>
+
+  <script src="/js/jquery-rest.js"></script>
+  <script src="/js/common.js"></script>
+  <script th:inline="javascript" type="text/javascript">
+  /*<![CDATA[*/
+    var kanbanId = /*[[${id}]]*/;
+  /*]]>*/
+  </script>
+  <script src="/js/kanban/urls.js"></script>
+
+  <script type="text/babel" src="/js/kanban/components.jsx"></script>
+  <script type="text/babel" src="/js/kanban/member.jsx"></script>
+  <script type="text/babel" src="/js/kanban/card.jsx"></script>
+  <script type="text/babel" src="/js/kanban/panel.jsx"></script>
+  <script type="text/babel" src="/js/kanban/navbar.jsx"></script>
+  <script type="text/babel" src="/js/kanban/app.jsx"></script>
+</body>
+</html>

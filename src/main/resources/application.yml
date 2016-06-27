@@ -1,0 +1,22 @@
+#debug: true
+
+multipart:
+  enabled: true
+  max-request-size: 1MB
+  file-size-threshold: 1MB
+  max-file-size: 1MB
+  
+spring:
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:~/kanban
+    username: sa
+    password: 
+  jpa:
+    database: h2
+#    show-sql: true
+    hibernate:
+      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+      ddl-auto: update

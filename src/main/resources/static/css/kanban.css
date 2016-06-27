@@ -1,0 +1,204 @@
+html,
+body {
+  height: 100%;
+  background-color: #333;
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+hr {
+  max-width: 1170px;
+}
+
+footer {
+  color: #fff;
+  text-align: center;
+}
+
+label.error {
+  color: #a94442;
+  font-size: 90%;
+  margin: 5px 0px 0px 5px;
+}
+
+.container {
+  /*overflow-x: scroll;*/
+  white-space: nowrap;
+}
+
+.navbar-inverse .navbar-brand {
+  color: #fff;  
+}
+
+.navbar-brand {
+  font-size: 24px;
+}
+
+.navbar div.form-group {
+  margin-right: 5px;
+}
+
+.panel {
+  display: inline-block;
+  vertical-align: text-top;
+  width: 270px;
+}
+
+.panel-heading span {
+  cursor: pointer;
+}
+
+.panel-heading span:last-child {
+  float: right;
+  color: #848484;
+  opacity: .5;
+}
+
+ul.dropdown-menu {
+  z-index: 10000;
+}
+
+.panel-heading :last-child:hover {
+  color: #000;
+}
+
+.panel-footer span {
+  cursor: pointer;
+  color: #989696;
+}
+
+.panel-footer span:hover {
+  color: #484747;
+  text-decoration: underline;
+}
+
+.list-group {
+  margin-bottom: 0px;
+}
+
+.list-group-item {
+  padding-top: 0px;
+}
+
+.list-group-item-toolbox {
+  padding-bottom: 0px;
+  margin-bottom: 5px;
+  text-align: right;
+}
+
+.list-group-item-priority {
+  height: 5px;
+  width: 50px;
+  float: left;
+}
+
+.list-group-item-toolbar {
+  height: 5px;
+  width: 50px;
+  float: right;
+}
+
+.list-group-item-toolbox span {
+  color: #848484;
+  font-size: 85%;
+  opacity: .5;
+  cursor: pointer;
+}
+
+.list-group-item-toolbox span:hover {
+  color: #000;
+}
+
+.list-group-item-toolbox a > span {
+}
+
+.list-group-item-content small,
+.list-group-item-content small:last-child > span {
+  margin-right: 3px;
+}
+
+.list-group-item-content span {
+  color: #333;
+  cursor: pointer;
+}
+
+.list-group-item-content span:hover {
+  text-decoration: none;
+}
+
+.modal-md {
+  width: 500px;
+}
+
+.thumbnail-remove {
+  position: relative;
+  z-index: 1;
+  float: right;
+  margin-right: 15px;
+}
+
+.thumbnail-remove > img {
+  position: absolute;
+  z-index: 2;
+}
+
+.thumbnail-remove > span {
+  position: relative;
+  z-index: 3;
+  top: -11px;
+  left: 13px;
+  font-size: 80%;
+  color: #a4a4a4;
+  opacity: .7;
+  cursor: pointer;
+}
+
+.member-list {
+  margin: 0px 10px 10px 10px;
+}
+
+.member-item {
+  padding: 10px 15px 10px 15px;
+}
+
+.member-item > img,
+.member-item > span {
+  float: right;
+  margin-right: 10px;
+}
+
+.picture {
+  margin-right: 3px;
+  border-radius: 3px;
+}
+
+.colorpicker-selectors i {
+  width: 20px;
+  height: 20px;
+}
+
+.ui-autocomplete {
+  position: absolute;
+  z-index: 5000;
+  cursor: default;
+  padding: 0;
+  margin-top: 2px;
+  list-style: none;
+  background-color: #ffffff;
+  border: 1px solid #ccc
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+     -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.ui-autocomplete > li {
+  padding: 3px 20px;
+}
+.ui-autocomplete > li.ui-state-focus {
+  background-color: #DDD;
+}
+.ui-helper-hidden-accessible {
+  display: none;
+}
